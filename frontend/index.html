@@ -161,7 +161,7 @@ button:active{
 <script>
 function login(){
 
-    fetch("http://localhost:3000/login",{
+    fetch("/login",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -172,15 +172,15 @@ function login(){
         })
     })
     .then(res=>res.json())
-    .then(data=>{
+    .then(data => {
 
         if(data.tipo==="triagem"){
             location.href="triagem.html";
         }
-        else if(data.tipo==="medico"){
+       if(data.tipo==="medico"){
             location.href="medico.html";
         }
-        else if(data.tipo==="atendimento"){
+       if(data.tipo==="atendimento"){
             location.href="atendimento.html";
         }
         else{
